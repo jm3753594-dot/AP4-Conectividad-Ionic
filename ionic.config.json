@@ -1,0 +1,7 @@
+{
+  "name": "AP4-Conectividad-Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
