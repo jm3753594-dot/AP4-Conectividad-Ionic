@@ -1,25 +1,84 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Estado de conexión
+    <ion-title class="app-title">
+      MediRecuerda
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container">
 
-    @if (networkService.isOnline()) {
-      <div class="network-status online">
-        <h2>Conectado</h2>
-        <p>El dispositivo tiene conexión a la red.</p>
+  <div class="page-container">
+
+    <section class="welcome-section">
+      <h2>Hola, Rosa</h2>
+      <p>Hoy tienes 3 medicamentos</p>
+    </section>
+
+    <section class="medication-list">
+
+      <div class="medication-card">
+        <div>
+          <h3>08:00 AM</h3>
+          <p>Losartán 50 mg</p>
+        </div>
+
+        <button class="take-button">
+          Tomar
+        </button>
       </div>
-    } @else {
-      <div class="network-status offline">
-        <h2>Sin conexión</h2>
-        <p>El dispositivo se encuentra sin conexión a la red.</p>
+
+      <div class="medication-card">
+        <div>
+          <h3>01:00 PM</h3>
+          <p>Metformina 850 mg</p>
+        </div>
+
+        <button class="take-button">
+          Tomar
+        </button>
       </div>
-    }
+
+      <div class="medication-card">
+        <div>
+          <h3>08:00 PM</h3>
+          <p>Atorvastatina 20 mg</p>
+        </div>
+
+        <button class="take-button">
+          Tomar
+        </button>
+      </div>
+
+    </section>
+
+    <section class="connection-section">
+
+      @if (networkService.isOnline()) {
+
+        <div class="connection-status online">
+          <strong>Conectado</strong>
+          <p>El dispositivo tiene conexión a la red.</p>
+        </div>
+
+      } @else {
+
+        <div class="connection-status offline">
+          <strong>Sin conexión</strong>
+          <p>Puedes continuar usando MediRecuerda.</p>
+        </div>
+
+      }
+
+    </section>
 
   </div>
+
+  <nav class="bottom-navigation">
+    <span>Inicio</span>
+    <span>Historial</span>
+    <span>Cuidador</span>
+    <span>Perfil</span>
+  </nav>
+
 </ion-content>

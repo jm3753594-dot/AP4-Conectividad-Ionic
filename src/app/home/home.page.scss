@@ -1,37 +1,175 @@
-#container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 20px;
+ion-toolbar {
+  --background: #fff;
+  --color: #1f1f1f;
+  --min-height: 62px;
+  border-bottom: 1px solid #d7d7d7;
 }
 
-.network-status {
-  width: 100%;
-  max-width: 400px;
-  padding: 24px;
-  border-radius: 16px;
+.app-title {
   text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #202020;
 }
 
-.network-status h2 {
-  margin-top: 0;
+ion-content {
+  --background: #f6f7f6;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 18px 100px;
+}
+
+.welcome-section {
+  margin-bottom: 24px;
+}
+
+.welcome-section h2 {
+  margin: 0;
   font-size: 28px;
+  font-weight: 700;
+  color: #222;
 }
 
-.network-status p {
-  margin-bottom: 0;
+.welcome-section p {
+  margin: 7px 0 0;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.medication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.medication-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 92px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #9b9b9b;
+  border-radius: 14px;
+}
+
+.medication-card h3 {
+  margin: 0 0 7px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+.medication-card p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #444;
+}
+
+.take-button {
+  min-width: 105px;
+  min-height: 44px;
+  margin-left: 14px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 9px;
+  background: #2f8a3d;
+  color: #fff;
   font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.connection-section {
+  margin-top: 24px;
+}
+
+.connection-status {
+  padding: 16px 18px;
+  border-radius: 12px;
+}
+
+.connection-status strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.connection-status p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
 }
 
 .online {
-  background-color: #d4edda;
-  color: #155724;
-  border: 2px solid #28a745;
+  background: #e6f5e9;
+  color: #236b30;
+  border: 1px solid #98cea1;
 }
 
 .offline {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 2px solid #dc3545;
+  background: #fff0f0;
+  color: #922c2c;
+  border: 1px solid #dda4a4;
+}
+
+.bottom-navigation {
+  position: fixed;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 72px;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #fff;
+  border-top: 1px solid #d5d5d5;
+  font-size: 14px;
+  color: #707070;
+}
+
+.bottom-navigation span:first-child {
+  color: #2f8a3d;
+  font-weight: 700;
+}
+
+@media (max-width: 420px) {
+  .page-container {
+    padding: 20px 14px 95px;
+  }
+
+  .welcome-section h2 {
+    font-size: 25px;
+  }
+
+  .welcome-section p,
+  .medication-card p {
+    font-size: 16px;
+  }
+
+  .medication-card {
+    min-height: 88px;
+    padding: 15px;
+  }
+
+  .medication-card h3 {
+    font-size: 22px;
+  }
+
+  .take-button {
+    min-width: 92px;
+    min-height: 42px;
+    padding: 9px 15px;
+    font-size: 15px;
+  }
+
+  .bottom-navigation {
+    height: 68px;
+    font-size: 13px;
+  }
 }
