@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
+import { NetworkService } from '../services/network.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,8 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage {
-  constructor() {}
+
+  constructor(public networkService: NetworkService) {
+    this.networkService.initializeNetworkStatus();
+  }
 }
