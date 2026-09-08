@@ -23,9 +23,11 @@
           <p>Losartán 50 mg</p>
         </div>
 
-        <button class="take-button">
+        <ion-button
+          class="take-button"
+          (click)="takeMedication('Losartán 50 mg')">
           Tomar
-        </button>
+        </ion-button>
       </div>
 
       <div class="medication-card">
@@ -34,9 +36,11 @@
           <p>Metformina 850 mg</p>
         </div>
 
-        <button class="take-button">
+        <ion-button
+          class="take-button"
+          (click)="takeMedication('Metformina 850 mg')">
           Tomar
-        </button>
+        </ion-button>
       </div>
 
       <div class="medication-card">
@@ -45,9 +49,11 @@
           <p>Atorvastatina 20 mg</p>
         </div>
 
-        <button class="take-button">
+        <ion-button
+          class="take-button"
+          (click)="takeMedication('Atorvastatina 20 mg')">
           Tomar
-        </button>
+        </ion-button>
       </div>
 
     </section>
@@ -65,7 +71,25 @@
 
         <div class="connection-status offline">
           <strong>Sin conexión</strong>
-          <p>Puedes continuar usando MediRecuerda.</p>
+          <p>
+            Puedes continuar usando MediRecuerda.
+            Los datos se guardarán localmente.
+          </p>
+        </div>
+
+      }
+
+      @if (networkService.pendingCount() > 0) {
+
+        <div class="pending-info">
+          <strong>
+            Registros pendientes:
+            {{ networkService.pendingCount() }}
+          </strong>
+
+          <p>
+            Se sincronizarán automáticamente cuando vuelva la conexión.
+          </p>
         </div>
 
       }
