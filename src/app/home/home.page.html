@@ -10,11 +10,13 @@
 
   <div class="page-container">
 
+    <!-- Sección de bienvenida al usuario -->
     <section class="welcome-section">
       <h2>Hola, Rosa</h2>
       <p>Hoy tienes 3 medicamentos</p>
     </section>
 
+    <!-- Lista visual de medicamentos programados -->
     <section class="medication-list">
 
       <div class="medication-card">
@@ -23,6 +25,7 @@
           <p>Losartán 50 mg</p>
         </div>
 
+        <!-- Registra la toma del medicamento seleccionado -->
         <ion-button
           class="take-button"
           (click)="takeMedication('Losartán 50 mg')">
@@ -36,6 +39,7 @@
           <p>Metformina 850 mg</p>
         </div>
 
+        <!-- Registra la toma del medicamento seleccionado -->
         <ion-button
           class="take-button"
           (click)="takeMedication('Metformina 850 mg')">
@@ -49,6 +53,7 @@
           <p>Atorvastatina 20 mg</p>
         </div>
 
+        <!-- Registra la toma del medicamento seleccionado -->
         <ion-button
           class="take-button"
           (click)="takeMedication('Atorvastatina 20 mg')">
@@ -58,10 +63,12 @@
 
     </section>
 
+    <!-- Sección que informa el estado actual de la conexión -->
     <section class="connection-section">
 
       @if (networkService.isOnline()) {
 
+        <!-- Mensaje mostrado cuando existe conexión -->
         <div class="connection-status online">
           <strong>Conectado</strong>
           <p>El dispositivo tiene conexión a la red.</p>
@@ -69,6 +76,7 @@
 
       } @else {
 
+        <!-- Mensaje mostrado cuando no existe conexión -->
         <div class="connection-status offline">
           <strong>Sin conexión</strong>
           <p>
@@ -79,6 +87,7 @@
 
       }
 
+      <!-- Información de registros pendientes de sincronización -->
       @if (networkService.pendingCount() > 0) {
 
         <div class="pending-info">
@@ -98,6 +107,7 @@
 
   </div>
 
+  <!-- Navegación visual inferior de MediRecuerda -->
   <nav class="bottom-navigation">
     <span>Inicio</span>
     <span>Historial</span>
